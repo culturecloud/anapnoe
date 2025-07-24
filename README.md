@@ -246,7 +246,7 @@ wget -q https://raw.githubusercontent.com/anapnoe/stable-diffusion-webui-ux/mast
 ```
 Or just clone the repo wherever you want:
 ```bash
-git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-ux.git
+git clone https://github.com/anapnoe/stable-diffusion-webui-ux.git
 ```
 
 3. Run `webui.sh`.
