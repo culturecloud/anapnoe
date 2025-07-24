@@ -42,3 +42,5 @@ notification.mp3
 /cache
 trace.json
 /sysinfo-????-??-??-??-??.json
+/extensions-builtin/sd-webui-ux/.git
+/sd_models.db

@@ -328,18 +328,20 @@ class OptionsCategories:
 
     def register_category(self, category_id, label, position=None):
         if category_id in self.mapping:
-            return category_id
+            return category_id 
 
-        # Use a dictionary to hold the categories temporarily
-        temp_mapping = self.mapping.copy()
-
-        # Insert the new category at the specified position
-        if position is not None and position == 0:
-            temp_mapping = {category_id: OptionsCategory(category_id, label), **temp_mapping}
+        new_category = OptionsCategory(category_id, label)
+        if position is not None:
+            if position < 0 or position > len(self.mapping):
+                self.mapping[category_id] = new_category
+            else:
+                keys = list(self.mapping.keys())
+                keys.insert(position, category_id)
+                self.mapping[category_id] = new_category
+                self.mapping = {key: self.mapping[key] for key in keys}
         else:
-            temp_mapping[category_id] = OptionsCategory(category_id, label)
-
-        # Update the mapping
-        self.mapping = temp_mapping
+            self.mapping[category_id] = new_category
+        
+        return category_id
 
 categories = OptionsCategories()
