@@ -1,4 +1,4 @@
-*       @AUTOMATIC1111
+*       @anapnoe
 
 # if you were managing a localization and were removed from this file, this is because
 # the intended way to do localizations now is via extensions. See:
@@ -8,5 +8,6 @@
 # the git commit log is cluttered with things unrelated to almost everyone and
 # because I believe this is the best overall for the project to handle localizations almost
 # entirely without my oversight.
+
 
 
