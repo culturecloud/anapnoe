@@ -78,9 +78,10 @@ def initialize_tables():
     else:
         logger.debug("All tables already exist in database")
 
-initialize_tables()
-
 def on_ui_tabs():
+    # Make sure tables are initialized when UI loads
+    initialize_tables()
+
     with gr.Blocks(analytics_enabled=False) as anapnoe_sd_uiux_db:
         refresh_button = gr.Button("Refresh Database", elem_id="refresh_database")
         refresh_button.click(fn=initialize_tables, inputs=[], outputs=[])
@@ -88,3 +89,4 @@ def on_ui_tabs():
     return (anapnoe_sd_uiux_db, 'Init DB', 'anapnoe_sd_uiux_db'),
 
 script_callbacks.on_ui_tabs(on_ui_tabs)
+
