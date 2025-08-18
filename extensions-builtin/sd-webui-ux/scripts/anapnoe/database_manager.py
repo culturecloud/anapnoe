@@ -94,8 +94,13 @@ class DatabaseManager:
                 "message": "No valid table types to process"
             }) + "\n"
             return
-            
+
+        if refresh:
+            for page in pages.values():
+                page.refresh()
+
         total_items = sum(len(list(page.list_items()) or []) for page in pages.values())
+
         
         pbar = tqdm(total=total_items, unit='item', 
                     bar_format='{l_bar}{bar}| {n_fmt}/{total_fmt} [{percentage:3.0f}%]')
